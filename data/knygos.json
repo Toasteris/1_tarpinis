@@ -2,7 +2,11 @@
     {
         "autorius": "Balys Sruoga",
         "pavadinimas": "Dievu miskas",
-        "isleidimo_metai": 1957,
-        "genre": "biografija"
+        "isleidimo_metai": "1957",
+        "zanras": "Biografine",
+        "likusios_knygos": 11,
+        "pasiemimo_data": "2024-10-14",
+        "grazinimo_data": "2024-10-28",
+        "ar_veluojama": false
     }
 ]
