@@ -1,9 +1,10 @@
 class Knyga:
-    def __init__(self, autorius, pavadinimas, isleidimo_metai, zanras):
+    def __init__(self, autorius, pavadinimas, isleidimo_metai, zanras, likusios_knygos):
         self.autorius = autorius
         self.pavadinimas = pavadinimas
         self.isleidimo_metai = isleidimo_metai
         self.genre = zanras
+        self.likusios_knygos = likusios_knygos
 
-    def __repr__(self):
-        return f"Knyga({self.autorius}, {self.pavadinimas}, {self.isleidimo_metai}, {self.zanras})"
+    def __str__(self):
+        return f"{self.pavadinimas}, autorius {self.autorius} ({self.isleidimo_metai}) - Zanras: {self.zanras}, Kiekis: {self.likusios_knygos}"
