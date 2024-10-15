@@ -1,22 +1,102 @@
 [
     {
-        "autorius": "Balys Sruoga",
-        "pavadinimas": "Dievu miskas",
-        "isleidimo_metai": "1957",
-        "zanras": "Biografine",
+        "autorius": "J. K. Rowling",
+        "pavadinimas": "Haris Poteris ir Išminties akmuo",
+        "isleidimo_metai": "1997",
+        "zanras": "Fantastika",
+        "likusios_knygos": 3,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "George Orwell",
+        "pavadinimas": "1984",
+        "isleidimo_metai": "1949",
+        "zanras": "Distopija",
+        "likusios_knygos": 2,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "Gabriel Garcia Marquez",
+        "pavadinimas": "Šimtas metų vienatvės",
+        "isleidimo_metai": "1967",
+        "zanras": "Maginis realizmas",
         "likusios_knygos": 1,
         "pasiemimo_data": null,
         "grazinimo_data": null,
         "ar_veluojama": false
     },
     {
-        "autorius": "J.K. Rowling",
-        "pavadinimas": "Haris Poteris ir Azkabano kalinys",
-        "isleidimo_metai": "1999",
-        "zanras": "Romanas",
-        "likusios_knygos": 0,
-        "pasiemimo_data": "2024-10-15",
-        "grazinimo_data": "2024-10-29",
+        "autorius": "J. R. R. Tolkien",
+        "pavadinimas": "Žiedų Valdovas: Žiedo brolija",
+        "isleidimo_metai": "1954",
+        "zanras": "Fantastika",
+        "likusios_knygos": 4,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "Erich Maria Remarque",
+        "pavadinimas": "Vakarų fronte nieko naujo",
+        "isleidimo_metai": "1928",
+        "zanras": "Istorinis romanas",
+        "likusios_knygos": 2,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "F. Scott Fitzgerald",
+        "pavadinimas": "Didysis Getsbis",
+        "isleidimo_metai": "1925",
+        "zanras": "Klasika",
+        "likusios_knygos": 3,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "Harper Lee",
+        "pavadinimas": "Neužmušk strazdo giesmininko",
+        "isleidimo_metai": "1960",
+        "zanras": "Klasika",
+        "likusios_knygos": 1,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "Fyodor Dostoevsky",
+        "pavadinimas": "Nusikaltimas ir bausmė",
+        "isleidimo_metai": "1866",
+        "zanras": "Psichologinis romanas",
+        "likusios_knygos": 2,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "Leo Tolstoy",
+        "pavadinimas": "Karas ir taika",
+        "isleidimo_metai": "1869",
+        "zanras": "Istorinis romanas",
+        "likusios_knygos": 1,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "Jane Austen",
+        "pavadinimas": "Puikybė ir prietarai",
+        "isleidimo_metai": "1813",
+        "zanras": "Romantinis romanas",
+        "likusios_knygos": 2,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
         "ar_veluojama": false
     }
 ]
