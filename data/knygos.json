@@ -4,9 +4,19 @@
         "pavadinimas": "Dievu miskas",
         "isleidimo_metai": "1957",
         "zanras": "Biografine",
-        "likusios_knygos": 11,
-        "pasiemimo_data": "2024-10-14",
-        "grazinimo_data": "2024-10-28",
+        "likusios_knygos": 1,
+        "pasiemimo_data": null,
+        "grazinimo_data": null,
+        "ar_veluojama": false
+    },
+    {
+        "autorius": "J.K. Rowling",
+        "pavadinimas": "Haris Poteris ir Azkabano kalinys",
+        "isleidimo_metai": "1999",
+        "zanras": "Romanas",
+        "likusios_knygos": 0,
+        "pasiemimo_data": "2024-10-15",
+        "grazinimo_data": "2024-10-29",
         "ar_veluojama": false
     }
 ]

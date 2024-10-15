@@ -129,22 +129,26 @@ def ieskoti_knygos(biblioteka_file, ieskoti_pagal, reiksme):
     except FileNotFoundError:
         print("Bibliotekoje failas neegzistuoja")
 
-def pasimti_knyga(biblioteka_file, pavadinimas):
+def pasiimti_knyga(biblioteka_file, pavadinimas):
     try:
         with open(biblioteka_file, 'r') as file:
             knygos_data = json.load(file)
 
         knygos = [Knyga.from_dict(knyga_data) for knyga_data in knygos_data]
 
+        if patikrinti_velavima(knygos):
+            print("Veluojate grazinti knygas. Daugiau knygu skolintis negalite")
+            return
+
         for knyga in knygos:
             if knyga.pavadinimas.lower() == pavadinimas.lower():
                 if knyga.likusios_knygos > 0:
                     knyga.likusios_knygos -= 1
                     knyga.pasiemimo_data = datetime.datetime.now()
-                    knyga.grazinimo_data = knyga.pasiemimo_data + datetime.timedelta(days=14)
+                    knyga.grazinimo_data = datetime.datetime.now() + datetime.timedelta(days=14)
                     print(f"Pasiemete knyga '{pavadinimas}'. Grazinimo data: {knyga.grazinimo_data.strftime('%Y-%m-%d')}")
                 else:
-                    print(f"Knygos '{pavadinimas}' nebeliko!")
+                    print(f"Knygos '{pavadinimas}' nebeturime")
                 break
         else:
             print(f"Knyga '{pavadinimas}' nerasta bibliotekoje.")
@@ -186,33 +190,60 @@ def grazinti_knyga(biblioteka_file, pavadinimas):
     except Exception as e:
         print(f"Ivyko klaida: {e}")
 
-def patikrinti_pavelavimus(biblioteka_file):
+def patikrinti_velavima(knygos):
+    today = datetime.datetime.now().date()
+    for knyga in knygos:
+        if knyga.grazinimo_data and knyga.grazinimo_data.date() < today:
+            knyga.ar_veluojama = True
+        if knyga.ar_veluojama:
+            return True
+    return False
+
+def patikrinti_paveluotas_knygas(biblioteka_file):
     try:
         with open(biblioteka_file, 'r') as file:
             knygos_data = json.load(file)
 
-        knygos = [Knyga.from_dict(knyga_data) for knyga_data in knygos_data]
-        now = datetime.datetime.now()
-        ar_veluojama = []
+        if not knygos_data:
+            print("Bibliotekoje nėra knygų.")
+            return
 
-        for knyga in knygos:
-            if knyga.grazinimo_data and knyga.grazinimo_data < now:
+        today = datetime.datetime.now().date()
+        paveluotos_knygos = []
+
+        for knyga_data in knygos_data:
+            knyga = Knyga.from_dict(knyga_data)
+            if knyga.grazinimo_data and knyga.grazinimo_data.date() < today:
                 knyga.ar_veluojama = True
-                ar_veluojama.append(knyga)
-            else:
-                knyga.ar_veluojama = False
+                paveluotos_knygos.append(knyga)
 
-        with open(biblioteka_file, 'w') as file:
-            json.dump([knyga.to_dict() for knyga in knygos], file, indent=4)
-
-        if ar_veluojama:
+        if paveluotos_knygos:
             print("Paveluotos knygos:")
-            for knyga in ar_veluojama:
-                print(f"- {knyga.pavadinimas} (turejo buti grazinta {knyga.ar_veluojama.strftime('%Y-%m-%d')})")
+            for knyga in paveluotos_knygos:
+                print(f"{knyga.pavadinimas}, autorius: {knyga.autorius}, turėjo būti grąžinta: {knyga.grazinimo_data.date()}")
         else:
-            print("Nera paveluotu knygu")
-    
+            print("Nėra paveluotų knygų.")
+
     except FileNotFoundError:
-        print("Bibliotekos failas neegzistuoja")
+        print("Bibliotekoje failas neegzistuoja.")
+    except Exception as e:
+        print(f"Ivyko klaida: {e}")
+
+def rodyti_knygas(biblioteka_file):
+    try:
+        with open(biblioteka_file, 'r') as file:
+            knygos_data = json.load(file)
+
+        if not knygos_data:
+            print("Bibliotekoje nėra knygų.")
+            return
+
+        print("Knygų sąrašas:")
+        for knyga_data in knygos_data:
+            knyga = Knyga.from_dict(knyga_data)
+            print(knyga)
+
+    except FileNotFoundError:
+        print("Bibliotekoje failas neegzistuoja.")
     except Exception as e:
         print(f"Ivyko klaida: {e}")
